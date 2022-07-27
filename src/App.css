@@ -39,3 +39,38 @@
     transform: rotate(360deg);
   }
 }
+
+.gif-img{
+  width: 150px;
+}
+.gif-title{
+  font-size: 15px;
+}
+.gif-section{
+  display: flex;
+  flex-wrap: wrap;
+}
+.gif-article{
+  width: 200px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.gif-form input{
+  display: block;
+  margin-bottom: 10px;
+}
+.gif-form label{
+  display: block;
+  margin-bottom: 10px;
+}
+.none{
+  display: none;
+
+}
+.show{
+  display: block;
+}
+.errorText{
+  color: red;
+  margin-bottom: 10px;
+}

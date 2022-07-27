@@ -12,6 +12,9 @@ const GiphyMainApp = () => {
         setCategories([newCategory,...categories])
 
     }
+    const reset = ()=>{
+        setCategories([""])
+    }
     // const [inputValue, setInputValue] = useState("")
   
 
@@ -46,7 +49,8 @@ const GiphyMainApp = () => {
                     />
                 </form> */}
 
-                <AddGiphyCategory onNewCategory = { (inputvalue) => onAddCategory(inputvalue) } />
+                <AddGiphyCategory onNewCategory = { (inputvalue) => onAddCategory(inputvalue) }
+                reset = {()=>reset()} />
             </section>
 
             {/* section GiphyGrid */}

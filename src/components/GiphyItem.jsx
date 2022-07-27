@@ -1,25 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import getGifs from '../helpers/getGifs';
-
-const GiphyItem = ({ category }) => {
-
-    const [gifs, setGifs] = useState([]);
+import React from 'react'
+import "../App.css"
 
 
-    useEffect(() => {
-        getGifs(category)
-            .then(images => setGifs(images))
-    }, [])
-
+const GiphyItem = ({ gifs }) => {
 
     return (
         <>
-            <section>
+            <section className='gif-section'>
                 {gifs.map(gif => {
                     return (
-                        <article>
-                            <h6>{gif.title}</h6>
-                            <img src={gif.url} alt="gif" />
+                        <article className='gif-article'>
+                            <h6 className='gif-title'>{gif.title}</h6>
+                            <img className='gif-img' src={gif.url} alt="gif" />
                         </article>
                     )
                 })}
