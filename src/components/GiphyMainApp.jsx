@@ -13,7 +13,7 @@ const GiphyMainApp = () => {
 
     }
     const reset = ()=>{
-        setCategories([""])
+        setCategories([])
     }
     // const [inputValue, setInputValue] = useState("")
   
@@ -34,7 +34,7 @@ const GiphyMainApp = () => {
     return (
         <main className='App'>
             <section>
-                <h1>
+                <h1 className='container'>
                     GiphyMainApp
                 </h1>
             </section>

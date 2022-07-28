@@ -9,7 +9,7 @@ const GiphyItem = ({ gifs }) => {
             <section className='gif-section'>
                 {gifs.map(gif => {
                     return (
-                        <article className='gif-article'>
+                        <article key={gif.id} className='gif-article'>
                             <h6 className='gif-title'>{gif.title}</h6>
                             <img className='gif-img' src={gif.url} alt="gif" />
                         </article>

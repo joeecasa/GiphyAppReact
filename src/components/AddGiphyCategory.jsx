@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 const AddGiphyCategory = ({ onNewCategory,reset }) => {
     const [inputValue, setInputValue] = useState("")
-   let errorForm= document.querySelector("#errorForm")
 
-   
-    
+    let errorForm = "";
+   useEffect(()=>{
+    errorForm  = document.querySelector("#errorForm");
+   })
 
 
     const onFormSubmit = (event) => {
@@ -18,10 +19,12 @@ const AddGiphyCategory = ({ onNewCategory,reset }) => {
     }
     const onFormKeyUp = (event) =>{
         if(inputValue.trim().length < 2){
+            
             errorForm.classList.remove('none')
             errorForm.classList.add('show')
             
         } else{
+            
             errorForm.classList.add('none')
             errorForm.classList.remove('show')
             
@@ -35,7 +38,7 @@ const AddGiphyCategory = ({ onNewCategory,reset }) => {
     return (
         <section>
             <form className='gif-form' onSubmit={onFormSubmit} onKeyPress={ onFormKeyUp }  >
-                <label htmlFor="completa" >Ingrese la categoria</label>
+                <label htmlFor="completa" className='center' >Ingrese la categoria</label>
                 <input
                 name='completa'
                     type="text"
@@ -45,7 +48,7 @@ const AddGiphyCategory = ({ onNewCategory,reset }) => {
                 />
                 <div id='errorForm' className='none errorText'>Debe ingresar minimo 2 letras</div>
                 
-                <input name='enviar' type="submit" />
+                <input name='enviar' className='btn btn-outline-dark mt-5 center' type="submit" />
                 <input name='borrar' type="submit" onClick={reset} value="Restablecer"/>
             </form>
         </section>
